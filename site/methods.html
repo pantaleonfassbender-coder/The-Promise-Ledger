@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How it works · The Promise Ledger</title>
+<meta name="description" content="Rules, sources and limits of The Promise Ledger.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="wrap"><span class="tag">The Promise Ledger</span><h1>How it works</h1><p><a href="index.html">← Back to the ledger</a></p></header>
+<main class="wrap doc">
+<h2>What is measured</h2>
+<p>Twelve promises of the second Trump administration. Each is quoted word for word from its primary source: the inaugural address of January 20, 2025, an executive order or a presidential memorandum. Each is measured by one to four indicators taken from official statistical releases. A promise is measured only by what its own words name. Promises that cannot be measured from regularly published official data are left out, including all foreign-policy promises.</p>
+
+<h2>No hand on the numbers</h2>
+<p>Every indicator is fetched automatically from the agency that publishes it, every Monday shortly before 9:00 a.m. US Eastern, by a script whose code and every run are public in the repository's commit history. There is no manual entry, no estimate by a person or a language model, and no weighting. A run outside that schedule (for example after a correction to the code) carries its own time stamp, says so on the page, and is left out of the week-by-week trend. When a source fails, the last archived data are shown and the failure is stated on the indicator. When an agency stops publishing, the indicator turns <i>stale</i> and stops counting; the gap is shown, not filled.</p>
+
+<h2>The baseline</h2>
+<p>For every indicator the baseline is the last observation before the inauguration: December 2024 for monthly data, the last week ending before January 20, 2025 for weekly data. Indicators with strong seasons (prices of eggs and gasoline, energy output, customs receipts, federal outlays, removals) are compared as rolling totals or averages over 12 months or 52 weeks, so that a season is never compared with another season. A rolling average accepts one missing month (for example the October 2025 consumer-price data that BLS did not collect during the government shutdown); a rolling total needs every month.</p>
+
+<h2>When a change counts</h2>
+<p>Every series moves a little all the time. A change counts only if it is larger than the spread of changes over the same span before 2025: the standard deviation of all changes over that many months or weeks in the series' own history from 2010 to 2024, leaving out March 2020 to December 2021. The band measures how much such changes varied, not their usual direction: prices, for example, normally rise, and a rise still runs against a promise to bring them down. If a series has too little history for this, the band is not computed and the direction of the change decides; the indicator says so. One series uses a later start for its band, with the reason shown: U.S. LNG exports, which grew from almost nothing after 2016 (band from 2022).</p>
+
+<h2>Statuses</h2>
+<table>
+<tr><th>Indicator</th><td><b>better</b> or <b>worse</b>: the change exceeds the band in the direction the promise points, or against it. <b>unchanged</b>: within the band. <b>stale</b>: the latest observation is older than the indicator's own limit (for most monthly series 75 days); stale indicators do not count. <b>no new data</b>: nothing published since the baseline.</td></tr>
+<tr><th>Promise</th><td><b>on track</b>: at least half of its counted indicators better and none worse. <b>off track</b>: at least half worse. <b>mixed</b>: anything else. <b>no current data</b>: no indicator counts.</td></tr>
+<tr><th>Headline</th><td>The number of promises on track among those with current data. There is no total score.</td></tr>
+</table>
+<p>Two promises name an end point: “fill our strategic reserves up again right to the top” (the authorized capacity of the Strategic Petroleum Reserve, 714 million barrels) and “all illegal entry will immediately be halted” (zero). For these the ledger also shows how far the indicator has moved from the baseline toward that end point. The progress is shown, not used for the status.</p>
+
+<h2>Immigration enforcement</h2>
+<p>DHS's monthly tables on immigration enforcement stopped with November 2024 data. ICE's detention statistics are published irregularly. The ledger therefore uses three things and says which is which: ICE's own detention statistics (average daily population), with the date of the last publication; ICE's own case-level removal records, released under the Freedom of Information Act to the Deportation Data Project at UC Berkeley (CC0), which arrive months late and are marked as such; and U.S. Border Patrol apprehensions from CBP. Independent counts of deportation flights are not used, because they are not available as an automatic data feed.</p>
+
+<h2>Sources</h2>
+<ul>
+<li>U.S. Bureau of Labor Statistics, public data API (consumer prices, employment, unemployment)</li>
+<li>U.S. Energy Information Administration, history files (gasoline prices, crude oil and natural gas production, LNG exports, Strategic Petroleum Reserve)</li>
+<li>Federal Reserve Board, G.17 Industrial Production (manufacturing; automobiles and light vehicles)</li>
+<li>U.S. Treasury, Monthly and Daily Treasury Statement (customs duties, outlays, deficit)</li>
+<li>U.S. Census Bureau and BEA, FT-900 (goods trade balance)</li>
+<li>U.S. Customs and Border Protection, Nationwide Encounters, and U.S. Immigration and Customs Enforcement, Detention Statistics. cbp.gov and ice.gov refuse automated requests; the ledger does not disguise itself as a browser and reads the agencies' own published files from the Deportation Data Project's public CC0 mirrors instead.</li>
+<li>ICE removal records released under the Freedom of Information Act to the Deportation Data Project (UC Berkeley), CC0</li>
+</ul>
+
+<h2>Limits</h2>
+<p>A change after the inauguration does not show that policy caused it; prices, energy and trade follow the world economy, and many indicators were moving before 2025. The ledger is not an overall record of the administration. Official data are revised; the ledger always uses the current vintage for both the baseline and the latest value, and keeps every weekly result in <a href="data/history.jsonl">history.jsonl</a>. A promise on track is neither praise nor blame.</p>
+</main>
+<footer class="wrap"><p><a href="legal.html">Legal notice and privacy</a></p></footer>
+</body>
+</html>

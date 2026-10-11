@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Promise Ledger</title>
+<meta name="description" content="Twelve promises of the second Trump administration, measured every Monday at 9:00 a.m. US Eastern against official data, from a fixed pre-inauguration baseline.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="wrap">
+  <span class="tag">Measured every Monday, 9:00 a.m. US Eastern</span>
+  <h1>The Promise Ledger</h1>
+  <p class="sub">Twelve promises of the second Trump administration, each quoted from its primary source and measured against official data from a fixed baseline: the last data before January 20, 2025.</p>
+  <p id="summary" class="summary">Loading…</p>
+  <p class="fine">Status is computed by fixed rules, not judged: a change counts only if it is larger than the spread of changes over the same span before 2025. <a href="methods.html">How it works</a> · <a href="data/status.json">status.json</a> · <a href="data/history.jsonl">history.jsonl</a></p>
+</header>
+<main class="wrap">
+  <section id="trend"></section>
+  <section id="promises" class="grid"></section>
+</main>
+<footer class="wrap">
+  <p><b>Three caveats.</b> A change after the inauguration is not proof that policy caused it: prices, energy and trade move with the world economy. The ledger measures only what the promise itself names, so it is not an overall record of the administration. A promise “on track” is neither praise nor blame.</p>
+  <p>Data: U.S. government statistical releases (public domain) and ICE records released under FOIA to the Deportation Data Project (CC0). Texts on this site: CC BY 4.0, Pantaleon Fassbender. · <a href="methods.html">Methods</a> · <a href="legal.html">Legal notice and privacy</a></p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
