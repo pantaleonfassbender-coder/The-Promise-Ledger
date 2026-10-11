@@ -1,7 +1,7 @@
 {
- "as_of": "2026-10-11T11:18:00-04:00",
+ "as_of": "2026-10-11T11:25:00-04:00",
  "scheduled": false,
- "generated_utc": "2026-10-11T15:18:24+00:00",
+ "generated_utc": "2026-10-11T15:25:20+00:00",
  "summary": {
   "on_track": 6,
   "counted": 12,
@@ -222,6 +222,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/data/"
@@ -426,6 +427,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/data/"
@@ -630,6 +632,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/data/"
@@ -834,6 +837,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/data/"
@@ -1053,6 +1057,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/data/"
@@ -1873,6 +1878,7 @@
      "tier": "official",
      "freq": "W",
      "band_note": null,
+     "max_age": 21,
      "source": {
       "name": "U.S. Energy Information Administration",
       "url": "https://www.eia.gov/"
@@ -2077,6 +2083,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/data/"
@@ -2906,6 +2913,7 @@
      "tier": "official",
      "freq": "W",
      "band_note": null,
+     "max_age": 21,
      "source": {
       "name": "U.S. Energy Information Administration",
       "url": "https://www.eia.gov/"
@@ -3733,6 +3741,7 @@
      "tier": "official",
      "freq": "W",
      "band_note": null,
+     "max_age": 21,
      "source": {
       "name": "U.S. Energy Information Administration",
       "url": "https://www.eia.gov/"
@@ -3937,6 +3946,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 120,
      "source": {
       "name": "U.S. Energy Information Administration",
       "url": "https://www.eia.gov/"
@@ -4141,6 +4151,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": "band from 2022 on: U.S. LNG exports grew from almost nothing after 2016, so earlier growth is not typical variation",
+     "max_age": 120,
      "source": {
       "name": "U.S. Energy Information Administration",
       "url": "https://www.eia.gov/"
@@ -4364,6 +4375,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/data/"
@@ -4572,6 +4584,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "Federal Reserve Board, G.17 Industrial Production",
       "url": "https://www.federalreserve.gov/releases/g17/"
@@ -4780,6 +4793,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "Federal Reserve Board, G.17 Industrial Production",
       "url": "https://www.federalreserve.gov/releases/g17/"
@@ -5003,6 +5017,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/data/"
@@ -5211,6 +5226,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/data/"
@@ -5430,6 +5446,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "U.S. Treasury, Monthly Treasury Statement (Table 4)",
       "url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/"
@@ -5638,6 +5655,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "U.S. Treasury, Monthly Treasury Statement (Table 4)",
       "url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/"
@@ -6454,6 +6472,7 @@
      "tier": "official",
      "freq": "W",
      "band_note": null,
+     "max_age": 14,
      "source": {
       "name": "U.S. Treasury, Daily Treasury Statement",
       "url": "https://fiscaldata.treasury.gov/datasets/daily-treasury-statement/"
@@ -6673,6 +6692,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 90,
      "source": {
       "name": "U.S. Census Bureau and BEA, U.S. International Trade in Goods and Services (FT-900)",
       "url": "https://www.census.gov/foreign-trade/Press-Release/current_press_release/"
@@ -6890,6 +6910,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "U.S. Customs and Border Protection, Nationwide Encounters (CBP's file, read from the Deportation Data Project's CC0 mirror)",
       "url": "https://www.cbp.gov/document/stats/nationwide-encounters"
@@ -7073,6 +7094,7 @@
      "tier": "official-foia",
      "freq": "M",
      "band_note": null,
+     "max_age": 240,
      "source": {
       "name": "ICE removal records released under FOIA to the Deportation Data Project (UC Berkeley), CC0",
       "url": "https://deportationdata.org/data/ice.html"
@@ -7245,6 +7267,7 @@
      "tier": "official-foia",
      "freq": "M",
      "band_note": null,
+     "max_age": 240,
      "source": {
       "name": "ICE removal records released under FOIA to the Deportation Data Project (UC Berkeley), CC0",
       "url": "https://deportationdata.org/data/ice.html"
@@ -7449,6 +7472,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 60,
      "source": {
       "name": "ICE Detention Statistics, monthly average daily population (compiled from ICE's files by the Deportation Data Project, CC0)",
       "url": "https://www.ice.gov/detain/detention-management"
@@ -7668,6 +7692,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "U.S. Treasury, Monthly Treasury Statement (Table 1)",
       "url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/"
@@ -7876,6 +7901,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "U.S. Treasury, Monthly Treasury Statement (Table 1)",
       "url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/"
@@ -8088,6 +8114,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/data/"
@@ -8303,6 +8330,7 @@
      "tier": "official",
      "freq": "M",
      "band_note": null,
+     "max_age": 75,
      "source": {
       "name": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/data/"
@@ -8313,5 +8341,5 @@
    ]
   }
  ],
- "seconds": 51
+ "seconds": 69
 }

@@ -15,6 +15,31 @@
   <p class="sub">Foreign policy and military matters, including the war with Iran, are left out on purpose: their results are not published as regular official statistics, and any status for them would rest on editorial judgment, which this ledger is built to avoid.</p>
   <p id="summary" class="summary">Loading…</p>
   <p class="fine">Status is computed by fixed rules, not judged: a change counts only if it is larger than the spread of changes over the same span before 2025. <a href="methods.html">How it works</a> · <a href="data/status.json">status.json</a> · <a href="data/history.jsonl">history.jsonl</a></p>
+  <section class="terms" aria-labelledby="terms-h">
+    <h2 id="terms-h">What the terms mean</h2>
+    <div class="tgrid">
+      <dl>
+        <dt class="th">Each indicator</dt>
+        <dt><span class="pill toward">toward the promise</span></dt><dd>The value has moved in the direction the promise points, by more than the noise band.</dd>
+        <dt><span class="pill away">away from the promise</span></dt><dd>The value has moved in the opposite direction, by more than the noise band.</dd>
+        <dt><span class="pill mid">within normal range</span></dt><dd>The change, whatever its size, is not larger than the noise band, so it cannot be told apart from the series' normal fluctuation.</dd>
+        <dt><span class="pill">stale</span></dt><dd>The newest figure available from the source is older than this indicator's age limit, counted from the end of the week or month it covers: 14 or 21 days for weekly series, 60 to 120 days for monthly series, 240 days for ICE removal records released under FOIA. This happens when a release is late, suspended or discontinued. A stale indicator stays on the page with its last figure but does not count toward its promise until newer data arrive.</dd>
+        <dt><span class="pill">no new data</span></dt><dd>Nothing has been published since the baseline.</dd>
+      </dl>
+      <dl>
+        <dt class="th">Each promise</dt>
+        <dt><span class="pill toward">on track</span></dt><dd>At least half of its counted indicators are toward the promise, and none is away from it.</dd>
+        <dt><span class="pill away">off track</span></dt><dd>At least half of its counted indicators are away from the promise.</dd>
+        <dt><span class="pill mid">mixed</span></dt><dd>Anything in between.</dd>
+        <dt><span class="pill">no current data</span></dt><dd>None of its indicators counts.</dd>
+        <dt class="th">Measurement</dt>
+        <dt>Counted indicators</dt><dd>Those toward the promise, within normal range or away from it. Stale indicators and those without new data are shown but not counted.</dd>
+        <dt>Baseline</dt><dd>The last figure before January 20, 2025: December 2024 for monthly data, the last full week before the inauguration for weekly data.</dd>
+        <dt>Latest</dt><dd>The newest figure the source has published.</dd>
+        <dt>Noise band</dt><dd>The spread (standard deviation) of all changes over the same number of months or weeks in the series' own history from 2010 to 2024, leaving out March 2020 to December 2021.</dd>
+      </dl>
+    </div>
+  </section>
 </header>
 <main class="wrap">
   <section id="trend"></section>

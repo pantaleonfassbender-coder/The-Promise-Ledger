@@ -44,6 +44,7 @@
   function kpi(r) {
     const tier = r.tier === "official-foia" ? `<span class="tier">ICE records via FOIA, released with delay</span>` : "";
     const prog = r.progress != null ? `<div class="prog"><div style="width:${Math.max(0, Math.min(100, r.progress)).toFixed(0)}%"></div></div><span class="fine">${num(r.progress, 0)}% of the way from the baseline to the target (${fmtVal(r.target, r.unit)})</span>` : "";
+    const stale = r.status === "stale" ? `<p class="fine">Stale: the newest figure (${period(r.latest.period)}) is ${r.age_days} days old, past this indicator's limit of ${r.max_age} days; it is shown but not counted.</p>` : "";
     const err = r.fetch_error ? `<p class="fine warn">This week's fetch failed; the last archived data are shown.</p>` : "";
     const band = (r.band != null ? `noise band: spread of ${r.span}-${r.freq === "W" ? "week" : "month"} changes before 2025, ±${r.change_kind === "pct" ? num(r.band, 1) + "%" : fmtVal(r.band, r.unit)}` : "no noise band (too little history): the sign decides") + (r.band_note ? ` (${esc(r.band_note)})` : "");
     return `<div class="kpi">
@@ -58,7 +59,7 @@
         ${spark(r)}
       </div>
       ${prog}
-      <p class="fine">${band}. Source: <a href="${esc(r.source.url)}" target="_blank" rel="noopener">${esc(r.source.name)}</a> (${esc(r.series)})</p>${err}
+      <p class="fine">${band}. Source: <a href="${esc(r.source.url)}" target="_blank" rel="noopener">${esc(r.source.name)}</a> (${esc(r.series)})</p>${stale}${err}
     </div>`;
   }
   function card(p) {
