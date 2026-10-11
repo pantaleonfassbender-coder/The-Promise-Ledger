@@ -7,7 +7,7 @@
   const num = (v, d = 0) => v == null ? "–" : Number(v).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
   const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const period = (k, f) => !k ? "–" : k.length === 7 ? `${MON[+k.slice(5, 7) - 1]} ${k.slice(0, 4)}` : new Date(k + "T00:00:00Z").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
-  const STATUS = { "on track": "good", "better": "good", "off track": "bad", "worse": "bad", "mixed": "mid", "unchanged": "mid" };
+  const STATUS = { "on track": "toward", "toward the promise": "toward", "off track": "away", "away from the promise": "away", "mixed": "mid", "unchanged": "mid" };
 
   function fmtVal(v, unit) {
     if (v == null) return "–";
@@ -53,7 +53,7 @@
         <div class="nums">
           <div><span class="fine">Latest</span><b>${fmtVal(r.latest && r.latest.value, r.unit)}</b><span class="fine">${period(r.latest && r.latest.period)}</span></div>
           <div><span class="fine">Baseline</span><b>${fmtVal(r.baseline && r.baseline.value, r.unit)}</b><span class="fine">${period(r.baseline && r.baseline.period)}</span></div>
-          <div><span class="fine">Change</span><b>${fmtChange(r)}</b><span class="fine">${r.better === "lower" ? "lower is the promise" : "higher is the promise"}</span></div>
+          <div><span class="fine">Change</span><b>${fmtChange(r)}</b><span class="fine">${r.promised === "lower" ? "lower is the promise" : "higher is the promise"}</span></div>
         </div>
         ${spark(r)}
       </div>

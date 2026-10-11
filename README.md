@@ -9,8 +9,8 @@ official data, from a fixed baseline: the last data before the inauguration.
   entry, no language model, no weighting and no total score. The commit history is the audit trail.
 - **When a change counts.** Only if it exceeds the spread of changes over the same span in the series' own history
   from 2010 to 2024 (pandemic months left out).
-- **Statuses.** Indicators: better / unchanged / worse / stale. Promises: on track (at least half better, none worse),
-  off track (at least half worse), mixed, no current data. Headline: promises on track among those with current data.
+- **Statuses.** Indicators: toward the promise / unchanged / away from the promise / stale (direction only, no verdict). Promises: on track (at least half
+  toward the promise, none away from the promise), off track (at least half away from the promise), mixed, no current data. Headline: promises on track among those with current data.
 
 ## Sources (no API keys)
 

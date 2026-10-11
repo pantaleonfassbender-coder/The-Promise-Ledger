@@ -6,10 +6,10 @@ change    percent change, or the difference for rates and balances.
 band      a change counts only if it exceeds the spread of changes over the same span before 2025: the standard
           deviation of all changes over that many periods in the series' own history from 2010 to 2024, leaving
           out March 2020 to December 2021. With too little history the band is not computed and the sign decides.
-status    better / unchanged / worse, measured in the direction the promise points; "stale" when the latest
+status    toward the promise / unchanged / away from the promise, measured against the direction the promise points; "stale" when the latest
           observation is older than the indicator's own limit (stale indicators do not count).
-promise   on track: at least half of its counted indicators better and none worse; off track: at least half
-          worse; mixed otherwise; no current data when nothing counts. There is no weighting and no total score.
+promise   on track: at least half of its counted indicators toward the promise and none away from the promise; off track: at least half
+          away from the promise; mixed otherwise; no current data when nothing counts. There is no weighting and no total score.
 """
 import datetime as dt
 import statistics
@@ -93,7 +93,7 @@ def evaluate(k, series, today):
     keys = [x for x, _ in t]
     h = keys.index(lkey) - keys.index(bkey)
     ch = change(bval, lval, k["change"])
-    sign = 1 if k["better"] == "higher" else -1
+    sign = 1 if k["promised"] == "higher" else -1
     # noise band from the history before 2025
     hist = [(x, v) for x, v in pre if x >= k.get("band_from", "2010")]
     diffs = []
@@ -115,7 +115,7 @@ def evaluate(k, series, today):
     else:
         imp = sign * ch
         thr = band if band is not None else 0.0
-        status = "better" if imp > thr else "worse" if imp < -thr else "unchanged"
+        status = "toward the promise" if imp > thr else "away from the promise" if imp < -thr else "unchanged"
     res = dict(baseline=dict(period=bkey, value=bval), latest=dict(period=lkey, value=lval), change=ch, change_kind=k["change"],
                band=band, band_n=len(diffs), status=status, age_days=age, span=h)
     if "target" in k:
@@ -126,12 +126,12 @@ def evaluate(k, series, today):
 
 
 def promise_status(kpis):
-    counted = [r["status"] for r in kpis if r["status"] in ("better", "unchanged", "worse")]
+    counted = [r["status"] for r in kpis if r["status"] in ("toward the promise", "unchanged", "away from the promise")]
     if not counted:
         return "no current data"
     n = len(counted)
-    if counted.count("better") * 2 >= n and "worse" not in counted:
+    if counted.count("toward the promise") * 2 >= n and "away from the promise" not in counted:
         return "on track"
-    if counted.count("worse") * 2 >= n:
+    if counted.count("away from the promise") * 2 >= n:
         return "off track"
     return "mixed"

@@ -87,7 +87,7 @@ def main():
                 arch.update({x: v for x, v in new.items()})
                 arch_file.write_text(json.dumps(dict(sorted(arch.items()))), encoding="utf-8")
             res = evaluate(k, arch, today) if arch else dict(status="no data")
-            res.update(id=k["id"], label=k["label"], unit=k["unit"], better=k["better"], tier=k["tier"], freq=k["freq"], band_note=k.get("band_note"),
+            res.update(id=k["id"], label=k["label"], unit=k["unit"], promised=k["promised"], tier=k["tier"], freq=k["freq"], band_note=k.get("band_note"),
                        source=SOURCES[k["source"]], series=k["series"], fetch_error=errors.get(k["source"]))
             rows.append(res)
             history_kpis[k["id"]] = dict(status=res["status"], latest=res.get("latest"), change=res.get("change"))
