@@ -6,7 +6,7 @@ change    percent change, or the difference for rates and balances.
 band      a change counts only if it exceeds the spread of changes over the same span before 2025: the standard
           deviation of all changes over that many periods in the series' own history from 2010 to 2024, leaving
           out March 2020 to December 2021. With too little history the band is not computed and the sign decides.
-status    toward the promise / unchanged / away from the promise, measured against the direction the promise points; "stale" when the latest
+status    toward the promise / within normal range / away from the promise, measured against the direction the promise points; "stale" when the latest
           observation is older than the indicator's own limit (stale indicators do not count).
 promise   on track: at least half of its counted indicators toward the promise and none away from the promise; off track: at least half
           away from the promise; mixed otherwise; no current data when nothing counts. There is no weighting and no total score.
@@ -115,7 +115,7 @@ def evaluate(k, series, today):
     else:
         imp = sign * ch
         thr = band if band is not None else 0.0
-        status = "toward the promise" if imp > thr else "away from the promise" if imp < -thr else "unchanged"
+        status = "toward the promise" if imp > thr else "away from the promise" if imp < -thr else "within normal range"
     res = dict(baseline=dict(period=bkey, value=bval), latest=dict(period=lkey, value=lval), change=ch, change_kind=k["change"],
                band=band, band_n=len(diffs), status=status, age_days=age, span=h)
     if "target" in k:
@@ -126,7 +126,7 @@ def evaluate(k, series, today):
 
 
 def promise_status(kpis):
-    counted = [r["status"] for r in kpis if r["status"] in ("toward the promise", "unchanged", "away from the promise")]
+    counted = [r["status"] for r in kpis if r["status"] in ("toward the promise", "within normal range", "away from the promise")]
     if not counted:
         return "no current data"
     n = len(counted)

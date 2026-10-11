@@ -1,7 +1,7 @@
 {
- "as_of": "2026-10-11T11:12:00-04:00",
+ "as_of": "2026-10-11T11:18:00-04:00",
  "scheduled": false,
- "generated_utc": "2026-10-11T15:12:29+00:00",
+ "generated_utc": "2026-10-11T15:18:24+00:00",
  "summary": {
   "on_track": 6,
   "counted": 12,
@@ -242,7 +242,7 @@
      "change_kind": "diff",
      "band": 1.8688424657899971,
      "band_n": 108,
-     "status": "unchanged",
+     "status": "within normal range",
      "age_days": 41,
      "span": 19,
      "spark": [
@@ -650,7 +650,7 @@
      "change_kind": "pct",
      "band": 23.550944875380882,
      "band_n": 110,
-     "status": "unchanged",
+     "status": "within normal range",
      "age_days": 41,
      "span": 19,
      "spark": [
@@ -865,7 +865,7 @@
      "change_kind": "pct",
      "band": 19.97892086541698,
      "band_n": 118,
-     "status": "unchanged",
+     "status": "within normal range",
      "age_days": 41,
      "span": 20,
      "spark": [
@@ -1073,7 +1073,7 @@
      "change_kind": "pct",
      "band": 20.45727280545586,
      "band_n": 509,
-     "status": "unchanged",
+     "status": "within normal range",
      "age_days": 6,
      "span": 90,
      "spark": [
@@ -2937,7 +2937,7 @@
      "change_kind": "pct",
      "band": 12.018502159359928,
      "band_n": 512,
-     "status": "unchanged",
+     "status": "within normal range",
      "age_days": 9,
      "span": 89,
      "spark": [
@@ -4172,7 +4172,7 @@
      "change_kind": "pct",
      "band": 1.1400911740312873,
      "band_n": 116,
-     "status": "unchanged",
+     "status": "within normal range",
      "age_days": 11,
      "span": 21,
      "spark": [
@@ -5023,7 +5023,7 @@
      "change_kind": "diff",
      "band": 0.6650636669719021,
      "band_n": 118,
-     "status": "unchanged",
+     "status": "within normal range",
      "age_days": 11,
      "span": 20,
      "spark": [
@@ -7688,7 +7688,7 @@
      "change_kind": "pct",
      "band": 20.355231563686598,
      "band_n": 62,
-     "status": "unchanged",
+     "status": "within normal range",
      "age_days": 41,
      "span": 20,
      "spark": [
@@ -8119,7 +8119,7 @@
      "change_kind": "pct",
      "band": 2.5155828620284737,
      "band_n": 120,
-     "status": "unchanged",
+     "status": "within normal range",
      "age_days": 41,
      "span": 19,
      "spark": [
@@ -8313,5 +8313,5 @@
    ]
   }
  ],
- "seconds": 12
+ "seconds": 51
 }

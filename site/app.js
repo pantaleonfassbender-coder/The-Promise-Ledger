@@ -7,7 +7,7 @@
   const num = (v, d = 0) => v == null ? "–" : Number(v).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
   const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const period = (k, f) => !k ? "–" : k.length === 7 ? `${MON[+k.slice(5, 7) - 1]} ${k.slice(0, 4)}` : new Date(k + "T00:00:00Z").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
-  const STATUS = { "on track": "toward", "toward the promise": "toward", "off track": "away", "away from the promise": "away", "mixed": "mid", "unchanged": "mid" };
+  const STATUS = { "on track": "toward", "toward the promise": "toward", "off track": "away", "away from the promise": "away", "mixed": "mid", "within normal range": "mid" };
 
   function fmtVal(v, unit) {
     if (v == null) return "–";
