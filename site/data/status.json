@@ -1,7 +1,9 @@
 {
- "as_of": "2026-10-11T11:25:00-04:00",
- "scheduled": false,
- "generated_utc": "2026-10-11T15:25:20+00:00",
+ "as_of": "2026-10-12T10:05:00-04:00",
+ "scheduled": true,
+ "weekly": true,
+ "trigger": "catch-up",
+ "generated_utc": "2026-10-12T14:05:27+00:00",
  "summary": {
   "on_track": 6,
   "counted": 12,
@@ -39,7 +41,7 @@
      "band": 1.5162908828436583,
      "band_n": 120,
      "status": "away from the promise",
-     "age_days": 41,
+     "age_days": 42,
      "span": 19,
      "spark": [
       [
@@ -244,7 +246,7 @@
      "band": 1.8688424657899971,
      "band_n": 108,
      "status": "within normal range",
-     "age_days": 41,
+     "age_days": 42,
      "span": 19,
      "spark": [
       [
@@ -449,7 +451,7 @@
      "band": 2.79981659386661,
      "band_n": 120,
      "status": "away from the promise",
-     "age_days": 41,
+     "age_days": 42,
      "span": 19,
      "spark": [
       [
@@ -654,7 +656,7 @@
      "band": 23.550944875380882,
      "band_n": 110,
      "status": "within normal range",
-     "age_days": 41,
+     "age_days": 42,
      "span": 19,
      "spark": [
       [
@@ -870,7 +872,7 @@
      "band": 19.97892086541698,
      "band_n": 118,
      "status": "within normal range",
-     "age_days": 41,
+     "age_days": 42,
      "span": 20,
      "spark": [
       [
@@ -1079,7 +1081,7 @@
      "band": 20.45727280545586,
      "band_n": 509,
      "status": "within normal range",
-     "age_days": 6,
+     "age_days": 7,
      "span": 90,
      "spark": [
       [
@@ -1900,7 +1902,7 @@
      "band": 2.9927130814482443,
      "band_n": 120,
      "status": "away from the promise",
-     "age_days": 41,
+     "age_days": 42,
      "span": 19,
      "spark": [
       [
@@ -2116,7 +2118,7 @@
      "band": 8.293834011672411,
      "band_n": 512,
      "status": "away from the promise",
-     "age_days": 9,
+     "age_days": 10,
      "span": 89,
      "target": 714000,
      "progress": -34.93147254205876,
@@ -2946,7 +2948,7 @@
      "band": 12.018502159359928,
      "band_n": 512,
      "status": "within normal range",
-     "age_days": 9,
+     "age_days": 10,
      "span": 89,
      "spark": [
       [
@@ -3763,7 +3765,7 @@
      "band": 5.91080414049962,
      "band_n": 120,
      "status": "toward the promise",
-     "age_days": 72,
+     "age_days": 73,
      "span": 19,
      "spark": [
       [
@@ -3968,7 +3970,7 @@
      "band": 1.3192852190085025,
      "band_n": 17,
      "status": "toward the promise",
-     "age_days": 72,
+     "age_days": 73,
      "span": 19,
      "spark": [
       [
@@ -4184,7 +4186,7 @@
      "band": 1.1400911740312873,
      "band_n": 116,
      "status": "within normal range",
-     "age_days": 11,
+     "age_days": 12,
      "span": 21,
      "spark": [
       [
@@ -4397,7 +4399,7 @@
      "band": 2.395707429928374,
      "band_n": 118,
      "status": "toward the promise",
-     "age_days": 41,
+     "age_days": 42,
      "span": 20,
      "spark": [
       [
@@ -4606,7 +4608,7 @@
      "band": 10.08111954655834,
      "band_n": 118,
      "status": "toward the promise",
-     "age_days": 41,
+     "age_days": 42,
      "span": 20,
      "spark": [
       [
@@ -4826,7 +4828,7 @@
      "band": 0.4384492695648509,
      "band_n": 116,
      "status": "toward the promise",
-     "age_days": 11,
+     "age_days": 12,
      "span": 21,
      "spark": [
       [
@@ -5039,7 +5041,7 @@
      "band": 0.6650636669719021,
      "band_n": 118,
      "status": "within normal range",
-     "age_days": 11,
+     "age_days": 12,
      "span": 20,
      "spark": [
       [
@@ -5259,7 +5261,7 @@
      "band": 45.431593362259,
      "band_n": 45,
      "status": "toward the promise",
-     "age_days": 41,
+     "age_days": 42,
      "span": 20,
      "spark": [
       [
@@ -5468,7 +5470,7 @@
      "band": 44.904529833091296,
      "band_n": 45,
      "status": "toward the promise",
-     "age_days": 41,
+     "age_days": 42,
      "span": 20,
      "spark": [
       [
@@ -5677,7 +5679,7 @@
      "band": 69.00203606926722,
      "band_n": 28,
      "status": "toward the promise",
-     "age_days": 9,
+     "age_days": 10,
      "span": 89,
      "spark": [
       [
@@ -6505,7 +6507,7 @@
      "band": 8116.3091520545,
      "band_n": 118,
      "status": "away from the promise",
-     "age_days": 41,
+     "age_days": 42,
      "span": 20,
      "spark": [
       [
@@ -6725,7 +6727,7 @@
      "band": 77.51687929584466,
      "band_n": 17,
      "status": "toward the promise",
-     "age_days": 72,
+     "age_days": 73,
      "span": 19,
      "target": 0,
      "progress": 80.35714285714286,
@@ -6943,7 +6945,7 @@
      "band": null,
      "band_n": 0,
      "status": "toward the promise",
-     "age_days": 72,
+     "age_days": 73,
      "span": 19,
      "spark": [
       [
@@ -7116,7 +7118,7 @@
      "band": null,
      "band_n": 0,
      "status": "toward the promise",
-     "age_days": 72,
+     "age_days": 73,
      "span": 19,
      "spark": [
       [
@@ -7289,7 +7291,7 @@
      "band": 19.762996461527543,
      "band_n": 17,
      "status": "stale",
-     "age_days": 72,
+     "age_days": 73,
      "span": 19,
      "spark": [
       [
@@ -7505,7 +7507,7 @@
      "band": 3.325417960701984,
      "band_n": 62,
      "status": "away from the promise",
-     "age_days": 41,
+     "age_days": 42,
      "span": 20,
      "spark": [
       [
@@ -7714,7 +7716,7 @@
      "band": 20.355231563686598,
      "band_n": 62,
      "status": "within normal range",
-     "age_days": 41,
+     "age_days": 42,
      "span": 20,
      "spark": [
       [
@@ -7923,7 +7925,7 @@
      "band": 3.147565498095193,
      "band_n": 116,
      "status": "toward the promise",
-     "age_days": 11,
+     "age_days": 12,
      "span": 21,
      "spark": [
       [
@@ -8147,7 +8149,7 @@
      "band": 2.5155828620284737,
      "band_n": 120,
      "status": "within normal range",
-     "age_days": 41,
+     "age_days": 42,
      "span": 19,
      "spark": [
       [
@@ -8341,5 +8343,5 @@
    ]
   }
  ],
- "seconds": 69
+ "seconds": 13
 }
