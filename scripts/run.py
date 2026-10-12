@@ -1,10 +1,11 @@
-"""The weekly run (GitHub Action, Mondays before 9:00 a.m. US Eastern): fetch every source, merge into the archive
+"""The weekly run (GitHub Action, Mondays from 9:00 a.m. US Eastern): fetch every source, merge into the archive
 (data/series/*.json; a source that drops old months never erases them here), evaluate, write site/data/status.json
 and append one line to site/data/history.jsonl. The commit history is the audit trail.
 Run from the repository root:  python scripts/run.py
 """
 import datetime as dt
 import json
+import os
 import sys
 import time
 import traceback
@@ -23,13 +24,31 @@ OUT = ROOT / "site" / "data"
 ET = ZoneInfo("America/New_York")
 
 
-def as_of(now_utc):
-    """Scheduled runs (Monday before 10:00 a.m. ET) are stamped Monday 9:00 a.m. ET; any other run carries its own
-    time, so a manual run is never passed off as a scheduled one."""
+def kind_of_run(now_utc):
+    """Which run is this? Every run is stamped with its own time (US Eastern); nothing is backdated.
+    - 'schedule': started by GitHub's schedule on a Monday at or after 9:00 a.m. ET (GitHub may start it late);
+    - 'catch-up': started by hand with the catch-up switch on a Monday, when GitHub missed its schedule;
+    - 'manual': any other run (e.g. after a correction to the code): shown, but left out of the weekly trend.
+    Returns (stamp, kind, weekly) or None when a scheduled run should not write (too early for 9:00 a.m. ET in this
+    season, or this Monday's weekly run already exists)."""
     et = now_utc.astimezone(ET)
-    if et.weekday() == 0 and et.hour < 10:
-        return dt.datetime(et.year, et.month, et.day, 9, 0, tzinfo=ET), True
-    return et.replace(second=0, microsecond=0), False
+    event, catchup = os.environ.get("GITHUB_EVENT_NAME", ""), os.environ.get("CATCHUP", "") == "true"
+    monday = et.weekday() == 0
+    if event == "schedule":
+        if not monday or et.hour < 9:
+            return None
+        kind = "schedule"
+    elif catchup and monday:
+        kind = "catch-up"
+    else:
+        kind = "manual"
+    weekly = kind in ("schedule", "catch-up")
+    if weekly:
+        for line in (OUT / "history.jsonl").read_text(encoding="utf-8").splitlines() if (OUT / "history.jsonl").exists() else []:
+            h = json.loads(line)
+            if h.get("weekly", h.get("scheduled")) and h.get("trigger") in ("schedule", "catch-up") and h["as_of"][:10] == et.date().isoformat():
+                return None
+    return et.replace(second=0, microsecond=0), kind, weekly
 
 
 def load(path, default):
@@ -42,6 +61,11 @@ def load(path, default):
 def main():
     t0 = time.time()
     now = dt.datetime.now(dt.timezone.utc)
+    run = kind_of_run(now)
+    if run is None:
+        print("No weekly run due now (before 9:00 a.m. ET, not a Monday, or this Monday's run already exists).")
+        return
+    stamp, trigger, weekly = run
     ARCH.mkdir(parents=True, exist_ok=True)
     CACHE.mkdir(parents=True, exist_ok=True)
     OUT.mkdir(parents=True, exist_ok=True)
@@ -97,12 +121,11 @@ def main():
     on = [p for p in counted if p["status"] == "on track"]
     summary = dict(on_track=len(on), counted=len(counted), total=len(promises),
                    off_track=sum(p["status"] == "off track" for p in promises), mixed=sum(p["status"] == "mixed" for p in promises))
-    stamp, scheduled = as_of(now)
-    status = dict(as_of=stamp.isoformat(), scheduled=scheduled, generated_utc=now.isoformat(timespec="seconds"), summary=summary,
+    status = dict(as_of=stamp.isoformat(), scheduled=weekly, weekly=weekly, trigger=trigger, generated_utc=now.isoformat(timespec="seconds"), summary=summary,
                   errors=errors, meta={k: v for k, v in meta.items()}, promises=promises, seconds=round(time.time() - t0))
     (OUT / "status.json").write_text(json.dumps(status, ensure_ascii=False, indent=1), encoding="utf-8")
     with open(OUT / "history.jsonl", "a", encoding="utf-8") as f:
-        f.write(json.dumps(dict(as_of=status["as_of"], scheduled=scheduled, generated_utc=status["generated_utc"], summary=summary,
+        f.write(json.dumps(dict(as_of=status["as_of"], scheduled=weekly, weekly=weekly, trigger=trigger, generated_utc=status["generated_utc"], summary=summary,
                                 promises={p["id"]: p["status"] for p in promises}, kpis=history_kpis, errors=sorted(errors))) + "\n")
     print(json.dumps(summary), "errors:", errors, f"{status['seconds']} s")
 

@@ -71,7 +71,7 @@
     </article>`;
   }
   function trend(lines) {
-    const pts = lines.filter(l => l.scheduled !== false).map(l => ({ d: l.as_of.slice(0, 10), s: l.summary })).filter(p => p.s && p.s.counted);
+    const pts = lines.filter(l => (l.weekly ?? l.scheduled) !== false).map(l => ({ d: l.as_of.slice(0, 10), s: l.summary })).filter(p => p.s && p.s.counted);
     if (pts.length < 2) return `<p class="fine">The weekly trend appears from the second Monday on.</p>`;
     const W = 640, H = 90, P = 6, x = i => P + i * (W - 2 * P) / (pts.length - 1), y = v => H - P - v * (H - 2 * P);
     const path = pts.map((p, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(p.s.on_track / p.s.counted).toFixed(1)}`).join("");
@@ -83,7 +83,7 @@
       const s = S.summary, asof = new Date(S.as_of);
       const day = asof.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric", timeZone: "America/New_York" });
       const time = asof.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: "America/New_York" });
-      $("#summary").innerHTML = `As of ${day}, ${time} ET${S.scheduled ? "" : " (a run outside the Monday schedule)"}: <b>${s.on_track} of ${s.counted}</b> promises with current data on track · ${s.off_track} off track · ${s.mixed} mixed${s.total - s.counted ? ` · ${s.total - s.counted} without current data` : ""}.`;
+      $("#summary").innerHTML = `As of ${day}, ${time} ET${S.trigger === "catch-up" ? " (this week's run, started by hand after GitHub missed its schedule)" : (S.weekly ?? S.scheduled) ? "" : " (a run outside the Monday schedule)"}: <b>${s.on_track} of ${s.counted}</b> promises with current data on track · ${s.off_track} off track · ${s.mixed} mixed${s.total - s.counted ? ` · ${s.total - s.counted} without current data` : ""}.`;
       $("#promises").innerHTML = S.promises.map(card).join("");
       $("#trend").innerHTML = trend(H.split("\n").filter(Boolean).map(l => JSON.parse(l)));
     })

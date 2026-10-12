@@ -1,12 +1,21 @@
 name: Weekly ledger
 
-# Mondays 12:00 UTC = 8:00 a.m. EDT / 7:00 a.m. EST, so the run finishes before 9:00 a.m. US Eastern even when
-# GitHub starts scheduled jobs late. Every run appends a line to site/data/history.jsonl and commits, which also
-# keeps the schedule from being disabled for inactivity.
+# GitHub runs schedules in UTC and may start them late or, at busy times such as the top of the hour, drop them.
+# So there are three attempts on Mondays, away from the full hour: 13:07 and 14:07 UTC (one of them is 9:07 a.m.
+# US Eastern in summer, the other in winter) and 15:23 UTC as a fallback. scripts/run.py writes only the first run
+# that is due (Monday, 9:00 a.m. ET or later) and skips the others. If GitHub misses all three, start the workflow by
+# hand with "catch-up" ticked: the run is stamped with its own time and labelled as a catch-up on the page.
 on:
   schedule:
-    - cron: "0 12 * * 1"
+    - cron: "7 13 * * 1"
+    - cron: "7 14 * * 1"
+    - cron: "23 15 * * 1"
   workflow_dispatch:
+    inputs:
+      catchup:
+        description: "Catch-up: GitHub missed this Monday's schedule (counts as this week's run)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -26,6 +35,8 @@ jobs:
           python-version: "3.12"
       - run: pip install openpyxl==3.1.5 xlrd==2.0.1
       - name: Fetch, evaluate, write
+        env:
+          CATCHUP: ${{ inputs.catchup }}
         run: python scripts/run.py
       - name: Commit
         if: always()
