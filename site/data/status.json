@@ -1,15 +1,15 @@
 {
- "as_of": "2026-10-12T10:05:00-04:00",
+ "as_of": "2026-10-19T12:46:00-04:00",
  "scheduled": true,
  "weekly": true,
  "trigger": "catch-up",
- "generated_utc": "2026-10-12T14:05:27+00:00",
+ "generated_utc": "2026-10-19T16:46:35+00:00",
  "summary": {
-  "on_track": 6,
-  "counted": 12,
+  "on_track": 5,
+  "counted": 11,
   "total": 12,
-  "off_track": 3,
-  "mixed": 3
+  "off_track": 4,
+  "mixed": 2
  },
  "errors": {},
  "meta": {
@@ -33,16 +33,16 @@
       "value": 317.604
      },
      "latest": {
-      "period": "2026-08",
-      "value": 334.131
+      "period": "2026-09",
+      "value": 336.298
      },
-     "change": 5.2036498280878085,
+     "change": 5.885946020830968,
      "change_kind": "pct",
-     "band": 1.5162908828436583,
-     "band_n": 120,
+     "band": 1.5681056288815176,
+     "band_n": 118,
      "status": "away from the promise",
-     "age_days": 42,
-     "span": 19,
+     "age_days": 19,
+     "span": 20,
      "spark": [
       [
        "2023-01",
@@ -215,6 +215,10 @@
       [
        "2026-08",
        334.131
+      ],
+      [
+       "2026-09",
+       336.298
       ]
      ],
      "id": "cpi_level",
@@ -238,16 +242,16 @@
       "value": 2.888057219980067
      },
      "latest": {
-      "period": "2026-08",
-      "value": 3.3965478924364856
+      "period": "2026-09",
+      "value": 3.737684729064039
      },
-     "change": 0.5084906724564187,
+     "change": 0.8496275090839722,
      "change_kind": "diff",
-     "band": 1.8688424657899971,
-     "band_n": 108,
+     "band": 1.9195771786911628,
+     "band_n": 106,
      "status": "within normal range",
-     "age_days": 42,
-     "span": 19,
+     "age_days": 19,
+     "span": 20,
      "spark": [
       [
        "2023-01",
@@ -420,6 +424,10 @@
       [
        "2026-08",
        3.3965
+      ],
+      [
+       "2026-09",
+       3.7377
       ]
      ],
      "id": "cpi_12m",
@@ -443,16 +451,16 @@
       "value": 309.767
      },
      "latest": {
-      "period": "2026-08",
-      "value": 321.335
+      "period": "2026-09",
+      "value": 321.111
      },
-     "change": 3.7344197412894076,
+     "change": 3.6621073258287673,
      "change_kind": "pct",
-     "band": 2.79981659386661,
-     "band_n": 120,
+     "band": 2.8632546616968515,
+     "band_n": 118,
      "status": "away from the promise",
-     "age_days": 42,
-     "span": 19,
+     "age_days": 19,
+     "span": 20,
      "spark": [
       [
        "2023-01",
@@ -625,6 +633,10 @@
       [
        "2026-08",
        321.335
+      ],
+      [
+       "2026-09",
+       321.111
       ]
      ],
      "id": "food_home",
@@ -648,16 +660,16 @@
       "value": 3.1715
      },
      "latest": {
-      "period": "2026-08",
-      "value": 2.5025454545454546
+      "period": "2026-09",
+      "value": 2.392
      },
-     "change": -21.09268628265948,
+     "change": -24.578275264070637,
      "change_kind": "pct",
-     "band": 23.550944875380882,
-     "band_n": 110,
-     "status": "within normal range",
-     "age_days": 42,
-     "span": 19,
+     "band": 22.777533346796297,
+     "band_n": 108,
+     "status": "toward the promise",
+     "age_days": 19,
+     "span": 20,
      "spark": [
       [
        "2023-01",
@@ -830,6 +842,10 @@
       [
        "2026-08",
        2.5025
+      ],
+      [
+       "2026-09",
+       2.392
       ]
      ],
      "id": "eggs",
@@ -856,7 +872,7 @@
    "source": "Inaugural address, January 20, 2025",
    "url": "https://www.whitehouse.gov/remarks/2025/01/the-inaugural-address/",
    "note": null,
-   "status": "mixed",
+   "status": "off track",
    "kpis": [
     {
      "baseline": {
@@ -864,16 +880,16 @@
       "value": 293.155
      },
      "latest": {
-      "period": "2026-08",
-      "value": 345.169
+      "period": "2026-09",
+      "value": 376.558
      },
-     "change": 17.742832290085463,
+     "change": 28.450137299380884,
      "change_kind": "pct",
-     "band": 19.97892086541698,
-     "band_n": 118,
-     "status": "within normal range",
-     "age_days": 42,
-     "span": 20,
+     "band": 20.744662231808707,
+     "band_n": 116,
+     "status": "away from the promise",
+     "age_days": 19,
+     "span": 21,
      "spark": [
       [
        "2023-01",
@@ -1050,6 +1066,10 @@
       [
        "2026-08",
        345.169
+      ],
+      [
+       "2026-09",
+       376.558
       ]
      ],
      "id": "gasoline_cpi",
@@ -1073,16 +1093,16 @@
       "value": 3.3071923076923073
      },
      "latest": {
-      "period": "2026-10-05",
-      "value": 3.6385384615384617
+      "period": "2026-10-12",
+      "value": 3.662961538461538
      },
-     "change": 10.01895635386747,
+     "change": 10.757440078151358,
      "change_kind": "pct",
-     "band": 20.45727280545586,
-     "band_n": 509,
+     "band": 20.60414217513446,
+     "band_n": 507,
      "status": "within normal range",
      "age_days": 7,
-     "span": 90,
+     "span": 91,
      "spark": [
       [
        "2023-01-02",
@@ -1871,6 +1891,10 @@
       [
        "2026-10-05",
        3.6385
+      ],
+      [
+       "2026-10-12",
+       3.663
       ]
      ],
      "id": "gasoline_weekly",
@@ -1894,16 +1918,16 @@
       "value": 281.742
      },
      "latest": {
-      "period": "2026-08",
-      "value": 305.444
+      "period": "2026-09",
+      "value": 306.199
      },
-     "change": 8.41266122906772,
+     "change": 8.680636894747673,
      "change_kind": "pct",
-     "band": 2.9927130814482443,
-     "band_n": 120,
+     "band": 3.1089680145434535,
+     "band_n": 118,
      "status": "away from the promise",
-     "age_days": 42,
-     "span": 19,
+     "age_days": 19,
+     "span": 20,
      "spark": [
       [
        "2023-01",
@@ -2076,6 +2100,10 @@
       [
        "2026-08",
        305.444
+      ],
+      [
+       "2026-09",
+       306.199
       ]
      ],
      "id": "electricity_cpi",
@@ -2110,16 +2138,16 @@
       "value": 394566.0
      },
      "latest": {
-      "period": "2026-10-02",
+      "period": "2026-10-09",
       "value": 282983.0
      },
      "change": -28.279932888287384,
      "change_kind": "pct",
-     "band": 8.293834011672411,
-     "band_n": 512,
+     "band": 8.273870093496884,
+     "band_n": 510,
      "status": "away from the promise",
      "age_days": 10,
-     "span": 89,
+     "span": 90,
      "target": 714000,
      "progress": -34.93147254205876,
      "spark": [
@@ -2906,6 +2934,10 @@
       [
        "2026-10-02",
        282983.0
+      ],
+      [
+       "2026-10-09",
+       282983.0
       ]
      ],
      "id": "spr_stocks",
@@ -2940,16 +2972,16 @@
       "value": 13523.5
      },
      "latest": {
-      "period": "2026-10-02",
-      "value": 13954.25
+      "period": "2026-10-09",
+      "value": 13888.0
      },
-     "change": 3.185196140052504,
+     "change": 2.6953081672643986,
      "change_kind": "pct",
-     "band": 12.018502159359928,
-     "band_n": 512,
+     "band": 12.119943198213681,
+     "band_n": 510,
      "status": "within normal range",
      "age_days": 10,
-     "span": 89,
+     "span": 90,
      "spark": [
       [
        "2023-01-06",
@@ -3734,6 +3766,10 @@
       [
        "2026-10-02",
        13954.25
+      ],
+      [
+       "2026-10-09",
+       13888.0
       ]
      ],
      "id": "crude_prod",
@@ -3765,7 +3801,7 @@
      "band": 5.91080414049962,
      "band_n": 120,
      "status": "toward the promise",
-     "age_days": 73,
+     "age_days": 80,
      "span": 19,
      "spark": [
       [
@@ -3970,7 +4006,7 @@
      "band": 1.3192852190085025,
      "band_n": 17,
      "status": "toward the promise",
-     "age_days": 73,
+     "age_days": 80,
      "span": 19,
      "spark": [
       [
@@ -4170,7 +4206,7 @@
    "source": "Inaugural address, January 20, 2025",
    "url": "https://www.whitehouse.gov/remarks/2025/01/the-inaugural-address/",
    "note": null,
-   "status": "on track",
+   "status": "mixed",
    "kpis": [
     {
      "baseline": {
@@ -4186,7 +4222,7 @@
      "band": 1.1400911740312873,
      "band_n": 116,
      "status": "within normal range",
-     "age_days": 12,
+     "age_days": 19,
      "span": 21,
      "spark": [
       [
@@ -4391,16 +4427,16 @@
       "value": 96.1524
      },
      "latest": {
-      "period": "2026-08",
-      "value": 99.0964
+      "period": "2026-09",
+      "value": 99.4361
      },
-     "change": 3.0618060495629873,
+     "change": 3.4150993630944093,
      "change_kind": "pct",
-     "band": 2.395707429928374,
-     "band_n": 118,
+     "band": 2.456985011193723,
+     "band_n": 116,
      "status": "toward the promise",
-     "age_days": 42,
-     "span": 20,
+     "age_days": 19,
+     "span": 21,
      "spark": [
       [
        "2023-01",
@@ -4560,23 +4596,27 @@
       ],
       [
        "2026-04",
-       98.8563
+       98.8383
       ],
       [
        "2026-05",
-       98.9796
+       98.9825
       ],
       [
        "2026-06",
-       99.2374
+       99.2705
       ],
       [
        "2026-07",
-       99.3952
+       99.4308
       ],
       [
        "2026-08",
-       99.0964
+       99.1776
+      ],
+      [
+       "2026-09",
+       99.4361
       ]
      ],
      "id": "mfg_output",
@@ -4600,16 +4640,16 @@
       "value": 111.853
      },
      "latest": {
-      "period": "2026-08",
-      "value": 123.258
+      "period": "2026-09",
+      "value": 118.5184
      },
-     "change": 10.196418513584792,
+     "change": 5.959071281056394,
      "change_kind": "pct",
-     "band": 10.08111954655834,
-     "band_n": 118,
-     "status": "toward the promise",
-     "age_days": 42,
-     "span": 20,
+     "band": 10.719587427947955,
+     "band_n": 116,
+     "status": "within normal range",
+     "age_days": 19,
+     "span": 21,
      "spark": [
       [
        "2023-01",
@@ -4769,23 +4809,27 @@
       ],
       [
        "2026-04",
-       123.67
+       123.6782
       ],
       [
        "2026-05",
-       130.1062
+       130.2463
       ],
       [
        "2026-06",
-       128.0848
+       128.7965
       ],
       [
        "2026-07",
-       124.6818
+       125.7914
       ],
       [
        "2026-08",
-       123.258
+       124.9834
+      ],
+      [
+       "2026-09",
+       118.5184
       ]
      ],
      "id": "auto_output",
@@ -4828,7 +4872,7 @@
      "band": 0.4384492695648509,
      "band_n": 116,
      "status": "toward the promise",
-     "age_days": 12,
+     "age_days": 19,
      "span": 21,
      "spark": [
       [
@@ -5041,7 +5085,7 @@
      "band": 0.6650636669719021,
      "band_n": 118,
      "status": "within normal range",
-     "age_days": 12,
+     "age_days": 19,
      "span": 20,
      "spark": [
       [
@@ -5253,16 +5297,16 @@
       "value": 78917.01998526
      },
      "latest": {
-      "period": "2026-08",
-      "value": 196983.16571521
+      "period": "2026-09",
+      "value": 173218.61464275
      },
-     "change": 149.6079625814586,
+     "change": 119.49462191438994,
      "change_kind": "pct",
-     "band": 45.431593362259,
-     "band_n": 45,
+     "band": 46.67614704851408,
+     "band_n": 43,
      "status": "toward the promise",
-     "age_days": 42,
-     "span": 20,
+     "age_days": 19,
+     "span": 21,
      "spark": [
       [
        "2023-01",
@@ -5439,6 +5483,10 @@
       [
        "2026-08",
        196983.1657
+      ],
+      [
+       "2026-09",
+       173218.6146
       ]
      ],
      "id": "customs_net",
@@ -5462,16 +5510,16 @@
       "value": 86077.19756601
      },
      "latest": {
-      "period": "2026-08",
-      "value": 323025.61671004
+      "period": "2026-09",
+      "value": 317804.36775284
      },
-     "change": 275.2743186862252,
+     "change": 269.2085438877415,
      "change_kind": "pct",
-     "band": 44.904529833091296,
-     "band_n": 45,
+     "band": 46.10604329057208,
+     "band_n": 43,
      "status": "toward the promise",
-     "age_days": 42,
-     "span": 20,
+     "age_days": 19,
+     "span": 21,
      "spark": [
       [
        "2023-01",
@@ -5648,6 +5696,10 @@
       [
        "2026-08",
        323025.6167
+      ],
+      [
+       "2026-09",
+       317804.3678
       ]
      ],
      "id": "customs_gross",
@@ -5671,16 +5723,16 @@
       "value": 7649.0
      },
      "latest": {
-      "period": "2026-10-02",
-      "value": 26007.0
+      "period": "2026-10-09",
+      "value": 26395.0
      },
-     "change": 240.00522944175708,
+     "change": 245.07778794613677,
      "change_kind": "pct",
-     "band": 69.00203606926722,
-     "band_n": 28,
+     "band": 68.81302053239378,
+     "band_n": 27,
      "status": "toward the promise",
      "age_days": 10,
-     "span": 89,
+     "span": 90,
      "spark": [
       [
        "2023-01-06",
@@ -6465,6 +6517,10 @@
       [
        "2026-10-02",
        26007.0
+      ],
+      [
+       "2026-10-09",
+       26395.0
       ]
      ],
      "id": "customs_weekly",
@@ -6507,7 +6563,7 @@
      "band": 8116.3091520545,
      "band_n": 118,
      "status": "away from the promise",
-     "age_days": 42,
+     "age_days": 49,
      "span": 20,
      "spark": [
       [
@@ -6711,7 +6767,7 @@
    "source": "Inaugural address, January 20, 2025",
    "url": "https://www.whitehouse.gov/remarks/2025/01/the-inaugural-address/",
    "note": "Target: zero. Baseline: December 2024, the last full month before the inauguration.",
-   "status": "on track",
+   "status": "no current data",
    "kpis": [
     {
      "baseline": {
@@ -6726,8 +6782,8 @@
      "change_kind": "pct",
      "band": 77.51687929584466,
      "band_n": 17,
-     "status": "toward the promise",
-     "age_days": 73,
+     "status": "stale",
+     "age_days": 80,
      "span": 19,
      "target": 0,
      "progress": 80.35714285714286,
@@ -6945,7 +7001,7 @@
      "band": null,
      "band_n": 0,
      "status": "toward the promise",
-     "age_days": 73,
+     "age_days": 80,
      "span": 19,
      "spark": [
       [
@@ -7118,7 +7174,7 @@
      "band": null,
      "band_n": 0,
      "status": "toward the promise",
-     "age_days": 73,
+     "age_days": 80,
      "span": 19,
      "spark": [
       [
@@ -7291,7 +7347,7 @@
      "band": 19.762996461527543,
      "band_n": 17,
      "status": "stale",
-     "age_days": 73,
+     "age_days": 80,
      "span": 19,
      "spark": [
       [
@@ -7499,16 +7555,16 @@
       "value": 6911275.56148551
      },
      "latest": {
-      "period": "2026-08",
-      "value": 7156768.60909512
+      "period": "2026-09",
+      "value": 7395799.98331323
      },
-     "change": 3.552065684917416,
+     "change": 7.010636712676166,
      "change_kind": "pct",
-     "band": 3.325417960701984,
-     "band_n": 62,
+     "band": 3.347218897931765,
+     "band_n": 60,
      "status": "away from the promise",
-     "age_days": 42,
-     "span": 20,
+     "age_days": 19,
+     "span": 21,
      "spark": [
       [
        "2023-01",
@@ -7684,7 +7740,11 @@
       ],
       [
        "2026-08",
-       7156768.6091
+       7156750.4689
+      ],
+      [
+       "2026-09",
+       7395799.9833
       ]
      ],
      "id": "outlays",
@@ -7708,16 +7768,16 @@
       "value": 2017805.0228753302
      },
      "latest": {
-      "period": "2026-08",
-      "value": 1767653.29619585
+      "period": "2026-09",
+      "value": 1992473.22435242
      },
-     "change": -12.39721994164823,
+     "change": -1.2554135922812182,
      "change_kind": "pct",
-     "band": 20.355231563686598,
-     "band_n": 62,
+     "band": 20.797967550626115,
+     "band_n": 60,
      "status": "within normal range",
-     "age_days": 42,
-     "span": 20,
+     "age_days": 19,
+     "span": 21,
      "spark": [
       [
        "2023-01",
@@ -7893,7 +7953,11 @@
       ],
       [
        "2026-08",
-       1767653.2962
+       1767635.156
+      ],
+      [
+       "2026-09",
+       1992473.2244
       ]
      ],
      "id": "deficit",
@@ -7925,7 +7989,7 @@
      "band": 3.147565498095193,
      "band_n": 116,
      "status": "toward the promise",
-     "age_days": 12,
+     "age_days": 19,
      "span": 21,
      "spark": [
       [
@@ -8133,7 +8197,7 @@
    "source": "Executive Order 14297 (title), May 12, 2025",
    "url": "https://www.federalregister.gov/documents/2025/05/15/2025-08876/delivering-most-favored-nation-prescription-drug-pricing-to-american-patients",
    "note": null,
-   "status": "mixed",
+   "status": "on track",
    "kpis": [
     {
      "baseline": {
@@ -8141,16 +8205,16 @@
       "value": 558.744
      },
      "latest": {
-      "period": "2026-08",
-      "value": 550.41
+      "period": "2026-09",
+      "value": 543.556
      },
-     "change": -1.4915596409089016,
+     "change": -2.718239479976514,
      "change_kind": "pct",
-     "band": 2.5155828620284737,
-     "band_n": 120,
-     "status": "within normal range",
-     "age_days": 42,
-     "span": 19,
+     "band": 2.586532994521028,
+     "band_n": 118,
+     "status": "toward the promise",
+     "age_days": 19,
+     "span": 20,
      "spark": [
       [
        "2023-01",
@@ -8323,6 +8387,10 @@
       [
        "2026-08",
        550.41
+      ],
+      [
+       "2026-09",
+       543.556
       ]
      ],
      "id": "rx_cpi",
@@ -8343,5 +8411,5 @@
    ]
   }
  ],
- "seconds": 13
+ "seconds": 19
 }
