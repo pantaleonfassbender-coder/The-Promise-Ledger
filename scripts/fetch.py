@@ -194,8 +194,15 @@ def gh_raw(repo, path, lfs=False):
 
 
 def cbp():
-    """CBP's Nationwide Encounters files (each covers four fiscal years); newer files override older months."""
-    paths = sorted(t["path"] for t in gh_tree("cbp") if re.search(r"encounters/validation/nationwide-encounters-fy\d\d-fy\d\d.*-aor\.csv$", t["path"]))
+    """CBP's Nationwide Encounters files (each covers four fiscal years); newer files override older months.
+    The files are found by name anywhere in the mirror: on 19 October 2026 the mirror moved them from
+    data/encounters/validation/ to inputs/cross-reference-files/."""
+    found = {}
+    for t in gh_tree("cbp"):
+        name = t["path"].rsplit("/", 1)[-1]
+        if re.fullmatch(r"nationwide-encounters-fy\d\d-fy\d\d.*-aor\.csv", name):
+            found.setdefault(name, t["path"])  # one copy per file name
+    paths = [found[n] for n in sorted(found)]
     if not paths:
         raise RuntimeError("CBP mirror: no Nationwide Encounters file found")
     out = {}
