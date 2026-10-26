@@ -83,7 +83,7 @@
       const s = S.summary, asof = new Date(S.as_of);
       const day = asof.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric", timeZone: "America/New_York" });
       const time = asof.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: "America/New_York" });
-      $("#summary").innerHTML = `As of ${day}, ${time} ET${S.trigger === "catch-up" ? " (this week's run, started by hand after GitHub missed its schedule)" : (S.weekly ?? S.scheduled) ? "" : " (a run outside the Monday schedule)"}: <b>${s.on_track} of ${s.counted}</b> promises with current data on track · ${s.off_track} off track · ${s.mixed} mixed${s.total - s.counted ? ` · ${s.total - s.counted} without current data` : ""}.`;
+      $("#summary").innerHTML = `As of ${day}, ${time} ET${S.trigger === "catch-up" ? " (this week's run, started by hand after GitHub missed its schedule)" : S.trigger === "external schedule" ? " (this week's run, started by the timer on Netlify that backs up GitHub's schedule)" : (S.weekly ?? S.scheduled) ? "" : " (a run outside the Monday schedule)"}: <b>${s.on_track} of ${s.counted}</b> promises with current data on track · ${s.off_track} off track · ${s.mixed} mixed${s.total - s.counted ? ` · ${s.total - s.counted} without current data` : ""}.`;
       $("#promises").innerHTML = S.promises.map(card).join("");
       $("#trend").innerHTML = trend(H.split("\n").filter(Boolean).map(l => JSON.parse(l)));
     })

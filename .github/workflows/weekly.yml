@@ -1,11 +1,16 @@
 name: Weekly ledger
 
 # GitHub runs schedules in UTC and may start them late or, at busy times such as the top of the hour, drop them.
-# So there are seven attempts, away from the full hour: 13:07 and 14:07 UTC (one of them is 9:07 a.m. US Eastern in
-# summer, the other in winter), then 15:23, 17:41, 19:53, 22:17 UTC and 01:37 UTC on Tuesday (still Monday evening
-# in US Eastern time). On 12 and 19 October 2026 GitHub started none of the first three on time. scripts/run.py
-# writes only the first run that is due (Monday, 9:00 a.m. ET or later) and skips the others. If GitHub misses all three, start the workflow by
-# hand with "catch-up" ticked: the run is stamped with its own time and labelled as a catch-up on the page.
+# On 12, 19 and 26 October 2026 none of GitHub's Monday schedules started on time. So there are two timers:
+# 1. A scheduled function on Netlify (netlify/functions/weekly-dispatch.mjs) starts this workflow with "external"
+#    ticked on Mondays at 13:11 and 14:11 UTC (one of them is 9:11 a.m. US Eastern in summer, the other in winter).
+#    It needs a token, GITHUB_DISPATCH_TOKEN, set in Netlify's environment (see README).
+#    The page labels such a run "external schedule".
+# 2. GitHub's own schedule stays as the fallback: seven attempts, away from the full hour: 13:07 and 14:07 UTC,
+#    then 15:23, 17:41, 19:53, 22:17 UTC and 01:37 UTC on Tuesday (still Monday evening in US Eastern time).
+# scripts/run.py writes only the first run that is due (Monday, 9:00 a.m. ET or later) and skips all later ones,
+# whichever timer started them; a run started too early or on another day ends without writing. If both timers miss,
+# start the workflow by hand with "catch-up" ticked: the run is stamped with its own time and labelled as a catch-up.
 on:
   schedule:
     - cron: "7 13 * * 1"
@@ -19,6 +24,10 @@ on:
     inputs:
       catchup:
         description: "Catch-up: GitHub missed this Monday's schedule (counts as this week's run)"
+        type: boolean
+        default: false
+      external:
+        description: "Started by the Netlify timer (counts as this week's run only on a Monday from 9:00 a.m. ET)"
         type: boolean
         default: false
 
@@ -35,6 +44,10 @@ jobs:
     timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The branch as it is when this job starts, not when it was queued: a run waiting behind another
+          # (see concurrency) must see the history.jsonl line that run wrote, or both would write this Monday.
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -42,6 +55,7 @@ jobs:
       - name: Fetch, evaluate, write
         env:
           CATCHUP: ${{ inputs.catchup }}
+          EXTERNAL: ${{ inputs.external }}
         run: python scripts/run.py
       - name: Commit
         if: always()

@@ -31,4 +31,21 @@ DHS's monthly enforcement tables stop at November 2024; the ledger says so on th
 
 Run locally: `pip install openpyxl xlrd && python scripts/run.py`
 
+## The two timers
+
+GitHub's schedule started late or not at all on three Mondays in a row (12, 19 and 26 October 2026). So a scheduled
+function on Netlify, `netlify/functions/weekly-dispatch.mjs`, also starts the workflow, on Mondays at 13:11 and
+14:11 UTC (one of them is 9:11 a.m. US Eastern in summer, the other in winter), with the switch `external` on.
+GitHub's own seven attempts stay as the fallback. `scripts/run.py` applies one rule to all of them: it writes only on a
+Monday from 9:00 a.m. ET and only the first run of that Monday; later or early runs end without writing. Every run
+carries its real time, and `trigger` in `status.json` and `history.jsonl` says what started it: `schedule` (GitHub),
+`external schedule` (the Netlify timer), `catch-up` (by hand, after both timers missed) or `manual` (any other run,
+left out of the weekly trend). The function never sees or changes data; it only asks GitHub to start the workflow.
+
+The function needs one environment variable in Netlify (scope: Functions), `GITHUB_DISPATCH_TOKEN`: a fine-grained
+GitHub token for this repository only, with the repository permission *Actions: Read and write* and nothing else.
+`LEDGER_DISPATCH_DRY_RUN=true` makes it send nothing and only report whether the token can see the workflow. Changes
+to environment variables take effect after the next deploy. "Run now" in Netlify's function view is a safe test on
+any day: the workflow starts and, outside Monday from 9:00 a.m. ET, ends without writing.
+
 Licence: code MIT; texts CC BY 4.0; data public domain or CC0 (see `LICENSE`).

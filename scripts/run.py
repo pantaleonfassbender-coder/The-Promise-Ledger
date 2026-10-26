@@ -1,6 +1,6 @@
-"""The weekly run (GitHub Action, Mondays from 9:00 a.m. US Eastern): fetch every source, merge into the archive
-(data/series/*.json; a source that drops old months never erases them here), evaluate, write site/data/status.json
-and append one line to site/data/history.jsonl. The commit history is the audit trail.
+"""The weekly run (GitHub Action, Mondays from 9:00 a.m. US Eastern, started by GitHub's schedule or by a timer on
+Netlify): fetch every source, merge into the archive (data/series/*.json; a source that drops old months never erases
+them here), evaluate, write site/data/status.json and append one line to site/data/history.jsonl. The commit history is the audit trail.
 Run from the repository root:  python scripts/run.py
 """
 import datetime as dt
@@ -22,31 +22,35 @@ ARCH = ROOT / "data" / "series"
 CACHE = ROOT / "data" / "cache"
 OUT = ROOT / "site" / "data"
 ET = ZoneInfo("America/New_York")
+WEEKLY_KINDS = ("schedule", "external schedule", "catch-up")  # the runs that make up the weekly trend
 
 
 def kind_of_run(now_utc):
     """Which run is this? Every run is stamped with its own time (US Eastern); nothing is backdated.
     - 'schedule': started by GitHub's schedule on a Monday at or after 9:00 a.m. ET (GitHub may start it late);
-    - 'catch-up': started by hand with the catch-up switch on a Monday, when GitHub missed its schedule;
+    - 'external schedule': started by the timer on Netlify (netlify/functions/weekly-dispatch.mjs), which starts the
+      workflow with the switch 'external' on; same rule as 'schedule' (Monday, 9:00 a.m. ET or later);
+    - 'catch-up': started by hand with the catch-up switch on a Monday, when both timers missed;
     - 'manual': any other run (e.g. after a correction to the code): shown, but left out of the weekly trend.
     Returns (stamp, kind, weekly) or None when a scheduled run should not write (too early for 9:00 a.m. ET in this
     season, or this Monday's weekly run already exists)."""
     et = now_utc.astimezone(ET)
-    event, catchup = os.environ.get("GITHUB_EVENT_NAME", ""), os.environ.get("CATCHUP", "") == "true"
+    event = os.environ.get("GITHUB_EVENT_NAME", "")
+    catchup, external = os.environ.get("CATCHUP", "") == "true", os.environ.get("EXTERNAL", "") == "true"
     monday = et.weekday() == 0
-    if event == "schedule":
+    if event == "schedule" or (event == "workflow_dispatch" and external):
         if not monday or et.hour < 9:
             return None
-        kind = "schedule"
+        kind = "schedule" if event == "schedule" else "external schedule"
     elif catchup and monday:
         kind = "catch-up"
     else:
         kind = "manual"
-    weekly = kind in ("schedule", "catch-up")
+    weekly = kind in WEEKLY_KINDS
     if weekly:
         for line in (OUT / "history.jsonl").read_text(encoding="utf-8").splitlines() if (OUT / "history.jsonl").exists() else []:
             h = json.loads(line)
-            if h.get("weekly", h.get("scheduled")) and h.get("trigger") in ("schedule", "catch-up") and h["as_of"][:10] == et.date().isoformat():
+            if h.get("weekly", h.get("scheduled")) and h.get("trigger") in WEEKLY_KINDS and h["as_of"][:10] == et.date().isoformat():
                 return None
     return et.replace(second=0, microsecond=0), kind, weekly
 

@@ -1,6 +1,10 @@
 # The site is static; the weekly GitHub Action writes site/data/ and commits, which triggers the deploy.
+# The only function is the Monday timer that starts that Action (netlify/functions/weekly-dispatch.mjs).
 [build]
   publish = "site"
+
+[functions]
+  directory = "netlify/functions"
 
 [[headers]]
   for = "/*"
