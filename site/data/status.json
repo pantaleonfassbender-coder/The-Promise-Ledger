@@ -1,9 +1,9 @@
 {
- "as_of": "2026-11-02T17:17:00-05:00",
+ "as_of": "2026-11-09T17:57:00-05:00",
  "scheduled": true,
  "weekly": true,
  "trigger": "schedule",
- "generated_utc": "2026-11-02T22:17:21+00:00",
+ "generated_utc": "2026-11-09T22:57:43+00:00",
  "summary": {
   "on_track": 5,
   "counted": 11,
@@ -13,7 +13,7 @@
  },
  "errors": {},
  "meta": {
-  "cbp_file": "inputs/cross-reference-files/nationwide-encounters-fy23-fy26-jul-aor.csv",
+  "cbp_file": "data/apprehensions/validation/cross-reference-files/nationwide-encounters-fy23-fy26-jul-aor.csv",
   "ice_adp_data_as_of": "2026-07-11",
   "foia_removals_through": "2026-08-05"
  },
@@ -41,7 +41,7 @@
      "band": 1.5681056288815176,
      "band_n": 118,
      "status": "away from the promise",
-     "age_days": 33,
+     "age_days": 40,
      "span": 20,
      "spark": [
       [
@@ -250,7 +250,7 @@
      "band": 1.9195771786911628,
      "band_n": 106,
      "status": "within normal range",
-     "age_days": 33,
+     "age_days": 40,
      "span": 20,
      "spark": [
       [
@@ -459,7 +459,7 @@
      "band": 2.8632546616968515,
      "band_n": 118,
      "status": "away from the promise",
-     "age_days": 33,
+     "age_days": 40,
      "span": 20,
      "spark": [
       [
@@ -668,7 +668,7 @@
      "band": 22.777533346796297,
      "band_n": 108,
      "status": "toward the promise",
-     "age_days": 33,
+     "age_days": 40,
      "span": 20,
      "spark": [
       [
@@ -888,7 +888,7 @@
      "band": 20.744662231808707,
      "band_n": 116,
      "status": "away from the promise",
-     "age_days": 33,
+     "age_days": 40,
      "span": 21,
      "spark": [
       [
@@ -1093,16 +1093,16 @@
       "value": 3.3071923076923073
      },
      "latest": {
-      "period": "2026-10-26",
-      "value": 3.711019230769231
+      "period": "2026-11-02",
+      "value": 3.732826923076923
      },
-     "change": 12.210566713573012,
+     "change": 12.869968716201296,
      "change_kind": "pct",
-     "band": 20.890159141869788,
-     "band_n": 503,
+     "band": 21.029600532089724,
+     "band_n": 501,
      "status": "within normal range",
      "age_days": 7,
-     "span": 93,
+     "span": 94,
      "spark": [
       [
        "2023-01-02",
@@ -1903,6 +1903,10 @@
       [
        "2026-10-26",
        3.711
+      ],
+      [
+       "2026-11-02",
+       3.7328
       ]
      ],
      "id": "gasoline_weekly",
@@ -1934,7 +1938,7 @@
      "band": 3.1089680145434535,
      "band_n": 118,
      "status": "away from the promise",
-     "age_days": 33,
+     "age_days": 40,
      "span": 20,
      "spark": [
       [
@@ -2146,18 +2150,18 @@
       "value": 394566.0
      },
      "latest": {
-      "period": "2026-10-23",
-      "value": 282583.0
+      "period": "2026-10-30",
+      "value": 282184.0
      },
-     "change": -28.381310097676938,
+     "change": -28.48243386404302,
      "change_kind": "pct",
-     "band": 8.237568541538213,
-     "band_n": 506,
+     "band": 8.219054934592494,
+     "band_n": 504,
      "status": "away from the promise",
      "age_days": 10,
-     "span": 92,
+     "span": 93,
      "target": 714000,
-     "progress": -35.05669402756125,
+     "progress": -35.181602459349975,
      "spark": [
       [
        "2023-01-06",
@@ -2954,6 +2958,10 @@
       [
        "2026-10-23",
        282583.0
+      ],
+      [
+       "2026-10-30",
+       282184.0
       ]
      ],
      "id": "spr_stocks",
@@ -2988,16 +2996,16 @@
       "value": 13523.5
      },
      "latest": {
-      "period": "2026-10-23",
-      "value": 13729.75
+      "period": "2026-10-30",
+      "value": 13735.75
      },
-     "change": 1.525122934151657,
+     "change": 1.569490146781538,
      "change_kind": "pct",
-     "band": 12.31888959826295,
-     "band_n": 506,
+     "band": 12.429621932506727,
+     "band_n": 504,
      "status": "within normal range",
      "age_days": 10,
-     "span": 92,
+     "span": 93,
      "spark": [
       [
        "2023-01-06",
@@ -3794,6 +3802,10 @@
       [
        "2026-10-23",
        13729.75
+      ],
+      [
+       "2026-10-30",
+       13735.75
       ]
      ],
      "id": "crude_prod",
@@ -3825,7 +3837,7 @@
      "band": 6.09547891103163,
      "band_n": 118,
      "status": "toward the promise",
-     "age_days": 63,
+     "age_days": 70,
      "span": 20,
      "spark": [
       [
@@ -4034,7 +4046,7 @@
      "band": 0.9845846038944969,
      "band_n": 16,
      "status": "toward the promise",
-     "age_days": 63,
+     "age_days": 70,
      "span": 20,
      "spark": [
       [
@@ -4246,16 +4258,16 @@
       "value": 12693.0
      },
      "latest": {
-      "period": "2026-09",
-      "value": 12652.0
+      "period": "2026-10",
+      "value": 12681.0
      },
-     "change": -0.32301268415662054,
+     "change": -0.09454029780193718,
      "change_kind": "pct",
-     "band": 1.1400911740312873,
-     "band_n": 116,
+     "band": 1.1536076200096845,
+     "band_n": 114,
      "status": "within normal range",
-     "age_days": 33,
-     "span": 21,
+     "age_days": 9,
+     "span": 22,
      "spark": [
       [
        "2023-01",
@@ -4431,11 +4443,15 @@
       ],
       [
        "2026-08",
-       12643.0
+       12649.0
       ],
       [
        "2026-09",
-       12652.0
+       12662.0
+      ],
+      [
+       "2026-10",
+       12681.0
       ]
      ],
      "id": "mfg_jobs",
@@ -4467,7 +4483,7 @@
      "band": 2.456985011193723,
      "band_n": 116,
      "status": "toward the promise",
-     "age_days": 33,
+     "age_days": 40,
      "span": 21,
      "spark": [
       [
@@ -4680,7 +4696,7 @@
      "band": 10.719587427947955,
      "band_n": 116,
      "status": "within normal range",
-     "age_days": 33,
+     "age_days": 40,
      "span": 21,
      "spark": [
       [
@@ -4896,16 +4912,16 @@
       "value": 158316.0
      },
      "latest": {
-      "period": "2026-09",
-      "value": 159044.0
+      "period": "2026-10",
+      "value": 159293.0
      },
-     "change": 0.45983981404280616,
+     "change": 0.6171201899997536,
      "change_kind": "pct",
-     "band": 0.4384492695648509,
-     "band_n": 116,
+     "band": 0.44304377609521933,
+     "band_n": 114,
      "status": "toward the promise",
-     "age_days": 33,
-     "span": 21,
+     "age_days": 9,
+     "span": 22,
      "spark": [
       [
        "2023-01",
@@ -5081,11 +5097,15 @@
       ],
       [
        "2026-08",
-       159015.0
+       159068.0
       ],
       [
        "2026-09",
-       159044.0
+       159128.0
+      ],
+      [
+       "2026-10",
+       159293.0
       ]
      ],
      "id": "payrolls",
@@ -5109,16 +5129,16 @@
       "value": 4.1
      },
      "latest": {
-      "period": "2026-09",
-      "value": 4.2
+      "period": "2026-10",
+      "value": 4.1
      },
-     "change": 0.10000000000000053,
+     "change": 0.0,
      "change_kind": "diff",
-     "band": 0.6650636669719021,
-     "band_n": 118,
+     "band": 0.6847297174572492,
+     "band_n": 116,
      "status": "within normal range",
-     "age_days": 33,
-     "span": 20,
+     "age_days": 9,
+     "span": 21,
      "spark": [
       [
        "2023-01",
@@ -5295,6 +5315,10 @@
       [
        "2026-09",
        4.2
+      ],
+      [
+       "2026-10",
+       4.1
       ]
      ],
      "id": "unemployment",
@@ -5337,7 +5361,7 @@
      "band": 46.67614704851408,
      "band_n": 43,
      "status": "toward the promise",
-     "age_days": 33,
+     "age_days": 40,
      "span": 21,
      "spark": [
       [
@@ -5550,7 +5574,7 @@
      "band": 46.10604329057208,
      "band_n": 43,
      "status": "toward the promise",
-     "age_days": 33,
+     "age_days": 40,
      "span": 21,
      "spark": [
       [
@@ -5755,16 +5779,16 @@
       "value": 7649.0
      },
      "latest": {
-      "period": "2026-10-30",
-      "value": 26471.0
+      "period": "2026-11-06",
+      "value": 26445.0
      },
-     "change": 246.07138187998433,
+     "change": 245.73146816577332,
      "change_kind": "pct",
-     "band": 59.213362927298824,
-     "band_n": 24,
+     "band": 60.824545661486866,
+     "band_n": 23,
      "status": "toward the promise",
      "age_days": 3,
-     "span": 93,
+     "span": 94,
      "spark": [
       [
        "2023-01-06",
@@ -6565,6 +6589,10 @@
       [
        "2026-10-30",
        26471.0
+      ],
+      [
+       "2026-11-06",
+       26445.0
       ]
      ],
      "id": "customs_weekly",
@@ -6599,16 +6627,16 @@
       "value": -123951.0
      },
      "latest": {
-      "period": "2026-08",
-      "value": -136572.0
+      "period": "2026-09",
+      "value": -135911.0
      },
-     "change": -12621.0,
+     "change": -11960.0,
      "change_kind": "diff",
-     "band": 8116.3091520545,
-     "band_n": 118,
+     "band": 8555.269056112335,
+     "band_n": 116,
      "status": "away from the promise",
-     "age_days": 63,
-     "span": 20,
+     "age_days": 40,
+     "span": 21,
      "spark": [
       [
        "2023-01",
@@ -6784,7 +6812,11 @@
       ],
       [
        "2026-08",
-       -136572.0
+       -136627.0
+      ],
+      [
+       "2026-09",
+       -135911.0
       ]
      ],
      "id": "goods_balance",
@@ -6827,7 +6859,7 @@
      "band": 77.51687929584466,
      "band_n": 17,
      "status": "stale",
-     "age_days": 94,
+     "age_days": 101,
      "span": 19,
      "target": 0,
      "progress": 80.35714285714286,
@@ -7045,7 +7077,7 @@
      "band": null,
      "band_n": 0,
      "status": "toward the promise",
-     "age_days": 94,
+     "age_days": 101,
      "span": 19,
      "spark": [
       [
@@ -7218,7 +7250,7 @@
      "band": null,
      "band_n": 0,
      "status": "toward the promise",
-     "age_days": 94,
+     "age_days": 101,
      "span": 19,
      "spark": [
       [
@@ -7391,7 +7423,7 @@
      "band": 19.762996461527543,
      "band_n": 17,
      "status": "stale",
-     "age_days": 94,
+     "age_days": 101,
      "span": 19,
      "spark": [
       [
@@ -7607,7 +7639,7 @@
      "band": 3.347218897931765,
      "band_n": 60,
      "status": "away from the promise",
-     "age_days": 33,
+     "age_days": 40,
      "span": 21,
      "spark": [
       [
@@ -7820,7 +7852,7 @@
      "band": 20.797967550626115,
      "band_n": 60,
      "status": "within normal range",
-     "age_days": 33,
+     "age_days": 40,
      "span": 21,
      "spark": [
       [
@@ -8025,16 +8057,16 @@
       "value": 3009.0
      },
      "latest": {
-      "period": "2026-09",
-      "value": 2682.0
+      "period": "2026-10",
+      "value": 2677.0
      },
-     "change": -10.867397806580259,
+     "change": -11.033565968760383,
      "change_kind": "pct",
-     "band": 3.147565498095193,
-     "band_n": 116,
+     "band": 3.2056053467020478,
+     "band_n": 114,
      "status": "toward the promise",
-     "age_days": 33,
-     "span": 21,
+     "age_days": 9,
+     "span": 22,
      "spark": [
       [
        "2023-01",
@@ -8210,11 +8242,15 @@
       ],
       [
        "2026-08",
-       2683.0
+       2681.0
       ],
       [
        "2026-09",
-       2682.0
+       2678.0
+      ],
+      [
+       "2026-10",
+       2677.0
       ]
      ],
      "id": "fed_jobs",
@@ -8257,7 +8293,7 @@
      "band": 2.586532994521028,
      "band_n": 118,
      "status": "toward the promise",
-     "age_days": 33,
+     "age_days": 40,
      "span": 20,
      "spark": [
       [
@@ -8455,5 +8491,5 @@
    ]
   }
  ],
- "seconds": 12
+ "seconds": 19
 }
